@@ -1,5 +1,11 @@
 .main-content {
   padding: 6px 0;
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  min-height: 0;
 }
 
 /* request header */
@@ -33,6 +39,9 @@
   border-radius: 6px;
   font-size: 12px;
   font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .request-buttons {
@@ -72,4 +81,118 @@
   );
   background-clip: text;
   color: transparent;
+}
+
+/*patient list*/
+.patients-container {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  min-height: 0;
+}
+
+.patients-list {
+  flex: 1;
+
+  overflow-y: auto;
+
+  min-height: 0;
+  padding: 8px 6px 2px 1px;
+}
+
+.patients-header {
+  margin-bottom: 6px;
+  margin-left: 4px;
+  color: #8b98a9;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.patient {
+  padding: 4px;
+  padding-left: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border-bottom: solid 1px #e9e9e9;
+}
+
+.patient-name {
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+}
+
+.patient-info {
+  display: flex;
+  gap: 12px;
+  color: #6c798a;
+}
+
+.patient-birth {
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.patient-age {
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: -5%;
+}
+
+/* selected patient info */
+.selected-patient-info {
+  height: 200px;
+  box-shadow: 0px -3px 6px -3px rgba(0, 0, 0, 0.2);
+}
+
+.selected-patient-tabs {
+  display: flex;
+  height: 26px;
+}
+
+.patient-tab {
+  font-size: 9px;
+  font-weight: 600;
+  color: #636363;
+  border-bottom: solid 1px #dddcdc;
+  height: 100%;
+  width: 100%;
+}
+
+.patient-tab.active {
+  background-color: #f0f9ff;
+  border-bottom: solid 1px #00a6f4;
+  color: #00a6f4;
+}
+
+/* request-container */
+
+.requests-list {
+  padding: 6px;
+  display: flex;
+  gap: 6px;
+  flex-direction: column;
+  font-size: 10px;
+}
+
+.request-container {
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3px 6px;
+  border-bottom: solid 1px #dddcdc;
+}
+
+.request-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.request-time {
+  font-weight: 700;
 }
