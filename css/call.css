@@ -177,6 +177,9 @@
   color: #00a6f4;
 }
 
+.patient-tabs-container {
+}
+
 /* request-container */
 
 .requests-list {
@@ -212,6 +215,8 @@
 
 /* visit */
 .visit-list {
+  overflow-y: auto;
+
   padding: 4px 6px 0;
   display: flex;
   flex-direction: column;
