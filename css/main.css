@@ -173,3 +173,12 @@ input[type="search"] {
   background-color: #f0f9ff;
   border-bottom: solid 1px #00a6f4;
 }
+
+/* hover effects */
+.main-button:hover {
+  opacity: 70%;
+}
+
+.tab-button:hover {
+  background-color: #f0f9ff;
+}

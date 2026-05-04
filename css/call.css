@@ -293,3 +293,14 @@
 .hidden {
   display: none;
 }
+
+/* hover effects */
+.start-button:hover,
+.register-button:hover,
+.request-subbutton:hover {
+  opacity: 70%;
+}
+.patient:hover,
+.patient-tab:hover {
+  background-color: #f0f9ff;
+}
