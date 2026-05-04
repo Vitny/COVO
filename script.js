@@ -84,3 +84,75 @@ tabBtns.forEach((tab) => {
     });
   });
 });
+
+// === Patients: выбор пациента и переключение вкладок ===
+
+const patients = document.querySelectorAll(".patients-list .patient");
+const selectedPatientInfo = document.querySelector(".selected-patient-info");
+const tabVisits = document.querySelector(".patient-tab:nth-child(2)");
+const tabRequests = document.querySelector(".patient-tab:nth-child(1)");
+const visitList = document.querySelector(".visit-list");
+const requestsList = document.querySelector(".requests-list");
+
+let activePatient = document.querySelector(".patient.active") || null;
+
+// Вспомогательная функция: сброс вкладок в дефолтное состояние (Обращения активна)
+function resetTabs() {
+  tabRequests.classList.add("active");
+  tabVisits.classList.remove("active");
+  visitList.classList.add("hidden");
+  requestsList.classList.remove("hidden");
+}
+
+// Вспомогательная функция: скрыть вкладку Визиты (пациент не выбран)
+function hideVisitsTab() {
+  tabVisits.classList.add("hidden");
+  resetTabs();
+}
+
+// Вспомогательная функция: показать вкладку Визиты (пациент выбран, но не активировать её)
+function showVisitsTab() {
+  tabVisits.classList.remove("hidden");
+}
+
+patients.forEach((patient) => {
+  patient.addEventListener("click", () => {
+    // Клик на уже активного пациента — снимаем выбор
+    if (patient === activePatient) {
+      patient.classList.remove("active");
+      activePatient = null;
+      hideVisitsTab();
+      return;
+    }
+
+    // Снимаем active со всех пациентов
+    patients.forEach((p) => p.classList.remove("active"));
+
+    // Активируем нажатого
+    patient.classList.add("active");
+    activePatient = patient;
+
+    // Показываем вкладку Визиты, но сбрасываем на Обращения
+    showVisitsTab();
+    resetTabs();
+  });
+});
+
+// === Переключение patient-tab внутри selected-patient-info ===
+
+tabRequests.addEventListener("click", () => {
+  tabRequests.classList.add("active");
+  tabVisits.classList.remove("active");
+  requestsList.classList.remove("hidden");
+  visitList.classList.add("hidden");
+});
+
+tabVisits.addEventListener("click", () => {
+  // Работает только если пациент выбран
+  if (!activePatient) return;
+
+  tabVisits.classList.add("active");
+  tabRequests.classList.remove("active");
+  visitList.classList.remove("hidden");
+  requestsList.classList.add("hidden");
+});
