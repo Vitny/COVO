@@ -51,3 +51,36 @@ navBtns.forEach((btn) => {
     });
   });
 });
+
+// === Tabs: переключение активного таба
+// (без переключения основного контента) ===
+
+const tabBtns = document.querySelectorAll(".tabs .tab-button");
+
+tabBtns.forEach((tab) => {
+  tab.addEventListener("click", () => {
+    // Сбрасываем все табы
+    tabBtns.forEach((t) => {
+      t.classList.remove("active");
+      t.querySelectorAll("svg path, svg rect, svg circle").forEach((el) => {
+        if (el.getAttribute("fill") && el.getAttribute("fill") !== "none") {
+          el.setAttribute("fill", "#8AA3B9");
+        }
+        if (el.getAttribute("stroke") && el.getAttribute("stroke") !== "none") {
+          el.setAttribute("stroke", "#8AA3B9");
+        }
+      });
+    });
+
+    // Активируем нажатый таб
+    tab.classList.add("active");
+    tab.querySelectorAll("svg path, svg rect, svg circle").forEach((el) => {
+      if (el.getAttribute("fill") && el.getAttribute("fill") !== "none") {
+        el.setAttribute("fill", "#00a6f4");
+      }
+      if (el.getAttribute("stroke") && el.getAttribute("stroke") !== "none") {
+        el.setAttribute("stroke", "#00a6f4");
+      }
+    });
+  });
+});
