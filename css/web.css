@@ -119,6 +119,134 @@
   color: #8b98a9;
 }
 
-.query-card-source {
+/* dropdown-source */
+.dropdown-source {
+  position: relative;
+  margin-bottom: 6px;
+  padding: 0 8px 0 4px;
+}
+
+.dropdown-source-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  padding: 4px 6px;
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 1px 1px 8px -3px rgba(0, 0, 0, 0.2);
+  font-size: 12px;
+  font-weight: 500;
+  color: #383f45;
+}
+
+.dropdown-source-label {
+  flex: 1;
+  text-align: left;
+}
+
+.dropdown-source-arrow {
+  transition: transform 0.2s ease;
+}
+
+.dropdown-source-arrow.open {
+  transform: rotate(180deg);
+}
+
+.dropdown-source-list {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 4px;
+  right: 8px;
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 1px 4px 12px -3px rgba(0, 0, 0, 0.25);
+  z-index: 10;
+  padding: 4px 0;
+}
+
+.dropdown-source-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 10px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.dropdown-source-item:hover {
+  background-color: #f0f9ff;
+}
+
+.dropdown-source-item input[type="checkbox"] {
+  width: 14px;
+  height: 14px;
+  accent-color: #8b98a9;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.dropdown-source-item img {
+  width: 18px;
+  height: 18px;
+}
+
+/* search dropdown */
+.search-container {
+  position: relative;
+}
+
+.search-dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 1px 4px 12px -3px rgba(0, 0, 0, 0.25);
+  z-index: 20;
+  overflow: hidden;
+  border: solid 1px #e2e2e2;
+  display: flex;
+  flex-direction: column;
+}
+
+.search-results-scroll {
+  overflow-y: auto;
+  max-height: calc(5 * 44px);
+}
+
+.search-result-item {
+  padding: 6px 10px;
+  border-bottom: solid 1px #e9e9e9;
+  cursor: pointer;
+}
+
+.search-result-item:last-of-type {
+  border-bottom: none;
+}
+
+.search-result-item:hover {
+  background-color: #f0f9ff;
+}
+
+.search-result-warning {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  padding: 6px 10px;
+  background-color: #fff8f0;
+  font-size: 10px;
+  color: #c46a00;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.search-result-warning svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.hidden {
   display: none;
 }
